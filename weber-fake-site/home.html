@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weber State University</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="home">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav class="utility" aria-label="Quick links">
+        <ul class="utility-links">
+            <li><a href="#">A-Z Index</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Canvas</a></li>
+            <li><a href="#">Employee Directory</a></li>
+            <li><a href="#">Maps</a></li>
+            <li><a href="#">Online Degrees</a></li>
+            <li><a href="#">Info for <span class="caret" aria-hidden="true"></span></a></li>
+            <li><a href="#">Weather Status <span class="caret" aria-hidden="true"></span></a></li>
+        </ul>
+        <ul class="utility-icons">
+            <li>
+                <a href="#" aria-label="Messages">
+                    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 3h16a2 2 0 012 2v10a2 2 0 01-2 2H9l-5 4v-4a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+                </a>
+            </li>
+            <li>
+                <a href="#" aria-label="Search">
+                    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6.5" fill="none" stroke="#fff" stroke-width="3"/><path d="M15 15l6 6" stroke="#fff" stroke-width="3"/></svg>
+                </a>
+            </li>
+            <li class="account">
+                <button type="button" class="account-toggle" id="account-toggle"
+                        aria-label="Your account" aria-expanded="false" aria-controls="account-panel">
+                    <span class="avatar" aria-hidden="true"></span>
+                </button>
+
+                <div class="account-panel" id="account-panel" role="region" aria-label="Account details" hidden>
+                    <div class="panel-top">
+                        <div class="panel-photo" aria-hidden="true"></div>
+                        <div class="panel-info">
+                            <p class="panel-name">Student Name</p>
+                            <p class="panel-email">student@mail.weber.edu</p>
+                            <button type="button" class="panel-link" id="wnumber-toggle" aria-pressed="false">
+                                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" fill="none" stroke="#fff" stroke-width="2.5"/><circle cx="12" cy="12" r="3.5" fill="#fff"/></svg>
+                                <span id="wnumber-text">Show W#</span>
+                            </button>
+                            <a class="panel-link" href="#">
+                                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21l1-5L16 4l4 4L8 20z" fill="#fff"/></svg>
+                                Profile Settings
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="panel-actions">
+                        <a class="panel-btn eweber" href="eWeber.html">eWeber</a>
+                        <a class="panel-btn logout" href="login.html">Logout</a>
+                    </div>
+
+                    <a class="code-purple" href="#" aria-label="Code Purple emergency notifications">
+                        <span>
+                            <span class="code-title">CODE PURPLE</span>
+                            <span class="code-sub">EMERGENCY NOTIFICATIONS</span>
+                        </span>
+                        <svg width="40" height="50" viewBox="0 0 26 32" aria-hidden="true" focusable="false">
+                            <path d="M2 2h22v14c0 7-5 12-11 14C7 28 2 23 2 16z" fill="none" stroke="#fff" stroke-width="2"/>
+                            <path d="M7 9l3 11 3-8 3 8 3-11" fill="none" stroke="#fff" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="masthead">
+        <div class="masthead-inner">
+            <nav class="site-nav site-nav-left" aria-label="Primary">
+                <ul>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Academics</a></li>
+                    <li><a href="#">Student Life &amp; Safety</a></li>
+                </ul>
+            </nav>
+
+            <a class="logo" href="home.html" aria-label="Weber State University home">
+                <svg width="64" height="78" viewBox="0 0 26 32" aria-hidden="true" focusable="false">
+                    <path d="M2 2h22v14c0 7-5 12-11 14C7 28 2 23 2 16z" fill="none" stroke="#46286a" stroke-width="2"/>
+                    <path d="M7 9l3 11 3-8 3 8 3-11" fill="none" stroke="#46286a" stroke-width="2"/>
+                </svg>
+                <span class="logo-name">WEBER STATE</span>
+                <span class="logo-sub">UNIVERSITY</span>
+            </a>
+
+            <nav class="site-nav site-nav-right" aria-label="Secondary">
+                <ul>
+                    <li><a href="#">About WSU</a></li>
+                    <li><a href="#">The Arts</a></li>
+                    <li><a href="#">Athletics</a></li>
+                    <li><a href="#">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="home-main">
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-image" role="img" aria-label="No image available">No image available</div>
+            <div class="hero-text">
+                <h1 id="hero-heading">Grow with Weber</h1>
+                <p>Discover some of the amazing Weber State students who found community and opportunities here. No matter your story, let WSU play a part in your journey.</p>
+                <a class="btn-hero" href="#">Student Stories</a>
+            </div>
+        </section>
+    </main>
+
+    <a class="questions" href="#">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 3h16a2 2 0 012 2v10a2 2 0 01-2 2H9l-5 4v-4a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+        Questions?
+    </a>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

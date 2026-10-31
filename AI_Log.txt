@@ -1,0 +1,233 @@
+AI_LOG.txt
+Course project: Weber State University UI prototype (front-end only)
+GenAI policy: Zone 1 (Permitted)
+Tool: Claude (Anthropic)
+Format per entry: Date, Prompt (verbatim), Code generated, Manual modifications
+Human adjustments made for WCAG touch targets and accessibility are collected
+in their own section at the end of this file.
+
+======================================================================
+ENTRY 1 - 2026-10-30  (scope discussion, no code)
+======================================================================
+PROMPT (verbatim):
+"Let's work on building out a few things and have you trained up to help me make this prototype for my class. First off, we must follow this GenAI policy Usage follows Zone 1 (Permitted) guidelines.
+
+* You may use GenAI tools for debugging front-end code, refining UI copy, or formatting specification tables.
+
+* If AI is used to draft prototyping scripts or layout code, you MUST include an AI_Log.txt file listing your prompts, code generated, and manual modifications made to satisfy WCAG touch targets and accessibility requirements.  To do this I want you to make an AI_Log.txt file as we go. We are trying to emulate the UI of the weber state course login page as well as other pages. Please make sure to only do the front-end. We will have minimal working parts and I will attach my current in progress login.html after this chat. Ask me any questions you need to in order to understand the scope of this assignment."
+
+CODE GENERATED: None. AI asked scoping questions (pages in scope, visual
+reference, tech constraints, WCAG target, working parts, mobile layout).
+
+MANUAL MODIFICATIONS: None.
+
+======================================================================
+ENTRY 2 - 2026-10-30  (login page build)
+======================================================================
+PROMPT (verbatim):
+"img_1: login page img_2"
+(Attached: two screenshots - the WSU Secure Login page and the WSU home
+page - plus the student's in-progress login.html draft.)
+
+CODE GENERATED (AI):
+- login.html  (rewritten from the student's draft)
+- css/styles.css  (new shared stylesheet)
+- js/login.js  (new, empty-field validation only)
+
+CHANGES THE AI MADE TO THE STUDENT'S DRAFT:
+- Moved <header> inside <body> (it was between </head> and <body>, which is invalid).
+- Changed the password input from type="text" to type="password".
+- Added for/id pairs so every label is programmatically tied to its input.
+- Added autocomplete="username" / "current-password" (WCAG 1.3.5).
+- Added <main>, <section> with aria-labelledby, and one <h1>; the second
+  card uses <h2>, so the heading order is logical.
+- Changed the banner and Login button text to match the screenshot; the
+  submit button text is now "Login" instead of "Submit".
+- Made the phone number and chat items link-styled buttons (<a class="btn">);
+  phone uses tel: and the number from the screenshot (801-626-7777).
+- Added inline error messages ("Username is a required field.") linked
+  with aria-describedby and aria-invalid, so errors are not shown by color alone.
+- Added novalidate to the form so the custom error messages display.
+
+ACCESSIBILITY / WCAG DECISIONS (AI-made):
+- Touch targets: .btn has min-height 44px (the screenshot's login button
+  is about 36px, so it was made taller). Text links get 10px vertical padding so
+  their clickable area is about 44px tall. (WCAG 2.5.8 requires 24x24px at AA;
+  2.5.5 recommends 44x44px.)
+- Contrast: white on #46286a for buttons; error text #9b1c1c on white;
+  placeholder-style label #595959 on white. All checked to meet 4.5:1.
+- Focus: visible 3px outline (#0b57d0) on inputs, links, and buttons (WCAG 2.4.7).
+- Error states use text plus border color, not color alone (WCAG 1.4.1).
+- Responsive layout under 600px and prefers-reduced-motion respected.
+
+KNOWN PLACEHOLDERS: shield logo is a simple inline SVG stand-in; links use
+href="#"; no real authentication (any non-empty input continues to home.html).
+
+MANUAL MODIFICATIONS (student): See HUMAN ADJUSTMENTS section, item 2.
+
+======================================================================
+ENTRY 3 - 2026-10-30  (clarification, no code)
+======================================================================
+PROMPT (verbatim):
+"Why do I have JS in here? Also, would you like the other images of the pages we need to make?"
+
+CODE GENERATED: None. AI explained that js/login.js was added to support
+"minimal working parts" (empty-field error messages) and offered to remove it.
+
+DECISION (student): keep js/login.js. (Student reply: "I'll keep it".)
+
+MANUAL MODIFICATIONS: None.
+
+======================================================================
+ENTRY 4 - 2026-10-30  (home page build)
+======================================================================
+PROMPT (verbatim):
+"I'll keep it, are you ready to makes the next page? I need a copy of what I'm calling home.html. For the person picture just have a blank grey box that says No image available and use the same W shield that you did last time"
+(Attached: screenshot of the WSU home page.)
+
+CODE GENERATED (AI):
+- home.html  (new)
+- css/styles.css  (home page rules appended under "Home page")
+
+DESIGN NOTES:
+- Hero photo replaced by a grey box (#5f5f5f) reading "No image available".
+- The W shield reuses the same inline SVG paths from login.html, drawn in purple.
+- The profile avatar in the top bar is a plain grey circle (no image).
+- Dropdown items "Info for" and "Weather Status" show a caret but have no menu.
+- All links are href="#" placeholders; the logo links to home.html.
+
+ACCESSIBILITY / WCAG DECISIONS (AI-made):
+- Touch targets: every utility link, site nav link, and icon link has
+  min-height 44px; icon links are at least 44px wide; "Student Stories"
+  and "Questions?" are at least 44px and 56px tall.
+- Contrast: white text on #5f5f5f (about 6.4:1) in the hero; white on #46286a
+  in the utility bar; white on #6a3d9a for the hero button; dark grey #3d3d3d on white
+  for site navigation.
+- Icon-only links (messages, search, account) have aria-label text.
+- The hero photo placeholder uses role="img" with aria-label.
+- Skip link ("Skip to main content") added for keyboard users (WCAG 2.4.1).
+- Landmarks: two <nav> regions with aria-label, <header>, <main>.
+- Focus: 3px outline on all links; the outline is white on purple/grey backgrounds
+  and blue on white so it stays visible (WCAG 2.4.7, 1.4.11).
+- Layout stacks below 800px.
+
+MANUAL MODIFICATIONS (student): None reported so far. See HUMAN ADJUSTMENTS section.
+
+======================================================================
+ENTRY 5 - 2026-10-30  (home page profile panel)
+======================================================================
+PROMPT (verbatim):
+"Before we leave here, I need this page to be able to open up the following box when the profile icon is clicked. Then have the eWeber button redirect to a eWeber.html"
+(Attached: screenshot of the open account panel.)
+
+CODE GENERATED (AI):
+- home.html  (profile link changed to a button; account panel markup added; script tag added)
+- js/home.js  (new: open/close panel, Show W# toggle)
+- css/styles.css  (appended "Account panel" rules)
+
+DESIGN NOTES:
+- Name and email are placeholders ("Student Name", "student@mail.weber.edu"),
+  not the personal details in the screenshot. The photo is a grey circle.
+- "Show W#" toggles a placeholder number (W00000000).
+- The eWeber button links to eWeber.html (page not built yet).
+- Logout links to login.html. This was not requested; it is a front-end placeholder.
+
+ACCESSIBILITY / WCAG DECISIONS (AI-made):
+- The profile icon is now a <button> with aria-expanded and aria-controls (it
+  opens a panel, it does not navigate).
+- Escape closes the panel and returns focus to the profile button
+  (WCAG 2.1.1); clicking outside also closes it.
+- Touch targets: profile button 44px; Show W#, Profile Settings, eWeber, and
+  Logout are each at least 44px tall.
+- Contrast: white on #46286a panel; Logout uses #b5472c (about 5.5:1 with white)
+  instead of the lighter coral in the screenshot, which was below 4.5:1.
+- Panel is wrapped at 400px max and shrinks on narrow screens.
+- White 3px focus outline on the dark panel (WCAG 2.4.7, 1.4.11).
+
+MANUAL MODIFICATIONS (student): None reported so far. See HUMAN ADJUSTMENTS section.
+
+======================================================================
+ENTRY 6 - 2026-10-30  (eWeber, registration menu, class search pages)
+======================================================================
+PROMPT (verbatim):
+"Next we need the eWeber page that has two states, the first state looks like the first image. The second state will happen when the green search icon is clicked. From there the "Register for Classes (Add / Drop) card needs to be clickable and move us to the next page which is the registrationSubMenu.html page. This will be the third image. when the user is in the registrationSubMenu.html page they can advance to the classSearchMenu.html page by clicking on the "Register for Classes" link. This new page will look like the fourth image. Have the summary table not include any of the class information. It should just have the top row and have a "no content provided" text letting the user know why nothing is happening there."
+(Attached: four screenshots - eWeber Featured, eWeber search results, Registration menu, Register for Classes.)
+
+CODE GENERATED (AI):
+- eWeber.html, registrationSubMenu.html, classSearchMenu.html  (new)
+- css/portal.css  (new, shared by the three pages; loads after styles.css)
+- js/portal.js  (Featured/search-results states, Favorite toggle)
+- js/classSearch.js  (tabs, Advanced Search toggle, search message, empty calendar rows)
+
+FLOW: login.html -> home.html -> profile panel eWeber button -> eWeber.html
+-> search icon -> results state -> "Register for Classes (Add / Drop)" card
+-> registrationSubMenu.html -> "Register for Classes" -> classSearchMenu.html.
+
+DESIGN NOTES:
+- App icons, the Registration menu icons, and the avatar are plain placeholder shapes.
+- The results state shows the same 20 cards for any search text (including none);
+  the heading repeats what was typed.
+- Summary table has only the header row plus "No content provided."; schedule
+  calendar is empty. Name shown as "Name, Student" (placeholder).
+- Search on the class page shows "No content provided." (no real search).
+- Tabs other than Find Classes, and Advanced Search, show "No content provided."
+- Most links are href="#". The avatar on eWeber links back to home.html.
+
+ACCESSIBILITY / WCAG DECISIONS (AI-made):
+- Touch targets: Details/Favorite buttons are 44px tall (the screenshot's are
+  about 25px), category links 44px, tabs, form fields, and buttons 44px; the
+  Open Sections checkbox is 24x24px inside a 44px-tall row.
+- The clickable card for "Register for Classes (Add / Drop)" uses its title link
+  stretched over the card, so keyboard and screen reader users get one link.
+- Search results update an aria-live status, and focus moves to the results heading.
+- Favorite uses aria-pressed; Advanced Search uses aria-expanded.
+- Tabs use role="tablist" with arrow-key support; breadcrumbs use aria-current.
+- Every form field has a visible label; the portal search field has a hidden label.
+- Contrast changes: the grey "What would you like to do?" bar was darkened to
+  #5d6573 so white text reaches at least 4.5:1; the Submit button is disabled (exempt).
+- Calendar and summary scroll areas are focusable regions so keyboard users can scroll.
+- Layout stacks below 800px.
+
+MANUAL MODIFICATIONS (student): See HUMAN ADJUSTMENTS section, item 1.
+
+======================================================================
+HUMAN ADJUSTMENTS FOR WCAG TOUCH TARGETS AND ACCESSIBILITY
+(Changes made by the student, not generated by AI)
+======================================================================
+
+1. classSearchMenu.html and registrationSubMenu.html  (related to Entry 6)
+   Change: Breadcrumb list changed from an ordered list (<ol>) to an
+           unordered list (<ul>).
+   Reason: The AI-generated <ol class="crumbs"> showed numbers next to the
+           links to the other sections (Student, Registration, etc.). The
+           stylesheet removes list markers only for <ul>, so using <ul>
+           removes the numbers.
+
+2. css/styles.css, .field class  (related to Entry 2, login.html)
+   Change: margin-bottom: 8px was changed to margin: 8px.
+   Reason: To achieve proper gap spacing between the form fields.
+
+======================================================================
+HUMAN ADJUSTMENTS: GAP SPACING FOR ALL INTERACTIVE ELEMENTS
+(Changes made by the student, not generated by AI)
+======================================================================
+
+3. css/styles.css and css/portal.css  (all entries)
+   Change: Edited many different aspects of both .css files.
+   Reason: To make it possible for all interactive elements (links, buttons,
+           form fields, and similar controls) to follow the same gap spacing
+           requirement as in item 2 above (8px).
+
+======================================================================
+HUMAN ADJUSTMENTS: LINK TARGET SIZE
+(Changes made by the student, not generated by AI)
+======================================================================
+
+4. css/portal.css, .b-list a class  (related to Entry 6)
+   Change: Edited the .b-list a rule in portal.css so the following links on
+           registrationSubMenu.html fit within the 44x44px target size:
+           Prepare for Registration, Register for Classes, Plan Ahead,
+           Search Class Schedule, Student Course Schedule, and Browse
+           Course Catalog.
+   Reason: To meet the WCAG AAA touch target size of 44x44px
+           (2.5.5 Target Size, Enhanced).

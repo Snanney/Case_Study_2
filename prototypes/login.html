@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Prototype</title>
+</head>
+<body>
+    <header>
+        <h1>Weber State University</h1>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="home.html">Home</a>
+    </nav>
+
+    <main>
+        <section aria-labelledby="login-heading">
+            <h2 id="login-heading">WSU Secure Login</h2>
+            <form>
+                <fieldset>
+                    <legend>Sign in</legend>
+                    <label for="username">Wildcat Username</label>
+                    <input type="text" id="username" name="username">
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+
+                    <button type="submit">Login</button>
+                </fieldset>
+            </form>
+            <nav aria-label="Login help">
+                <a href="#">Need your Wildcat Username?</a>
+                <a href="#">Forgot your password?</a>
+            </nav>
+        </section>
+
+        <section aria-labelledby="help-heading">
+            <h2 id="help-heading">IT Service Desk</h2>
+            <a href="tel:8016267777">801-626-7777</a>
+            <a href="#">IT Service Chat</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Weber State University</p>
+    </footer>
+</body>
+</html>

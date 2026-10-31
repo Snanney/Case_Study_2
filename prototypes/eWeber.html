@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eWeber Prototype</title>
+</head>
+<body>
+    <header>
+        <h1>eWeber Portal</h1>
+        <nav aria-label="Quick links">
+            <a href="home.html">WSU Home</a>
+            <a href="#">Calendar</a>
+            <a href="#">Canvas</a>
+            <a href="#">Search</a>
+        </nav>
+    </header>
+
+    <nav aria-label="Portal categories">
+        <h2>Categories</h2>
+        <a href="#">Featured</a>
+        <a href="#">Academics</a>
+        <a href="#">Accounts</a>
+        <a href="#">Admissions</a>
+        <a href="registrationSubMenu.html">Registration</a>
+    </nav>
+
+    <main>
+        <section aria-labelledby="apps-heading">
+            <h2 id="apps-heading">Featured</h2>
+            <form role="search">
+                <fieldset>
+                    <legend>Search portal apps</legend>
+                    <label for="portal-search">Search for Portal Apps</label>
+                    <input type="search" id="portal-search" name="search">
+                    <button type="submit">Search</button>
+                </fieldset>
+            </form>
+            <section aria-label="Portal applications">
+                <article>
+                    <h3><a href="registrationSubMenu.html">Registration</a></h3>
+                    <button type="button">Details</button>
+                    <button type="button">Favorite</button>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#">eWeber Help</a>
+    </footer>
+</body>
+</html>

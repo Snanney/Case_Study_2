@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Search Prototype</title>
+</head>
+<body>
+    <header>
+        <a href="eWeber.html">eWeber Portal</a>
+        <a href="home.html">Weber State University</a>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <a href="eWeber.html">Student</a>
+        <a href="registrationSubMenu.html">Registration</a>
+        <a href="#">Select a Term</a>
+        <span aria-current="page">Register for Classes</span>
+    </nav>
+
+    <main>
+        <nav aria-label="Registration sections">
+            <button type="button">Find Classes</button>
+            <button type="button">Enter CRNs</button>
+            <button type="button">Plans</button>
+            <button type="button">Schedule and Options</button>
+        </nav>
+
+        <section aria-labelledby="search-heading">
+            <h1 id="search-heading">Enter Your Search Criteria</h1>
+            <p>Term: Fall 2026</p>
+            <form>
+                <fieldset>
+                    <legend>Class search</legend>
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+
+                    <label for="course-number">Course Number</label>
+                    <input type="text" id="course-number" name="course-number">
+
+                    <label for="keyword">Keyword</label>
+                    <input type="text" id="keyword" name="keyword">
+
+                    <label for="campus">Campus</label>
+                    <input type="text" id="campus" name="campus">
+
+                    <label for="buildings">Buildings</label>
+                    <input type="text" id="buildings" name="buildings">
+
+                    <label for="open-only">Open Sections Only</label>
+                    <input type="checkbox" id="open-only" name="open-only">
+
+                    <button type="submit">Search</button>
+                    <button type="reset">Clear</button>
+                    <button type="button">Advanced Search</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section aria-labelledby="schedule-heading">
+            <h2 id="schedule-heading">Class Schedule for Fall 2026</h2>
+        </section>
+
+        <section aria-labelledby="summary-heading">
+            <h2 id="summary-heading">Summary</h2>
+            <a href="#">Tuition and Fees</a>
+        </section>
+
+        <button type="button" disabled>Submit</button>
+    </main>
+
+    <footer>
+        <p>Weber State University</p>
+    </footer>
+</body>
+</html>

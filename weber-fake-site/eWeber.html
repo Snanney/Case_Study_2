@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eWeber Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portal.css">
+</head>
+<body class="portal">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav class="utility" aria-label="Quick links">
+        <ul class="utility-links">
+            <li><a href="home.html">WSU Home</a></li>
+            <li><a href="#">A-Z Index</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Canvas</a></li>
+            <li><a href="#">Employee Directory</a></li>
+            <li><a href="#">Maps</a></li>
+            <li><a href="#">Online Degrees</a></li>
+            <li><a href="#">Info for <span class="caret" aria-hidden="true"></span></a></li>
+            <li><a href="#">Weather Status <span class="caret" aria-hidden="true"></span></a></li>
+        </ul>
+        <ul class="utility-icons">
+            <li><a href="#" aria-label="Messages"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 3h16a2 2 0 012 2v10a2 2 0 01-2 2H9l-5 4v-4a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg></a></li>
+            <li><a href="#" aria-label="Search"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6.5" fill="none" stroke="#fff" stroke-width="3"/><path d="M15 15l6 6" stroke="#fff" stroke-width="3"/></svg></a></li>
+            <li><a href="home.html" aria-label="Your account"><span class="avatar" aria-hidden="true"></span></a></li>
+        </ul>
+    </nav>
+
+    <header class="portal-banner"><p><em>e</em><strong>WEBER</strong> PORTAL</p></header>
+
+    <div class="portal-layout">
+        <nav class="categories" aria-labelledby="cat-heading">
+            <h2 id="cat-heading">Categories</h2>
+            <ul id="category-list">
+                <li><a href="#" id="cat-featured" aria-current="true">Featured</a></li>
+                <li><a href="#">Browse All</a></li><li><a href="#">Academics</a></li>
+                <li><a href="#">Accounts</a></li><li><a href="#">Administration</a></li>
+                <li><a href="#">Admissions</a></li><li><a href="#">Campus Life</a></li>
+                <li><a href="#">Directories</a></li><li><a href="#">Financial Aid</a></li>
+                <li><a href="#">Human Resources</a></li><li><a href="#">IT Services</a></li>
+                <li><a href="#">Payroll</a></li><li><a href="#">Registration</a></li>
+                <li><a href="#">Teaching and Advising</a></li><li><a href="#">Transportation</a></li>
+                <li><a href="#">Tuition and Fees</a></li>
+            </ul>
+        </nav>
+
+        <main id="main" class="portal-main">
+            <div class="toolbar">
+                <form id="search-form" class="search" role="search">
+                    <label for="portal-search" class="sr-only">Search for Portal Apps</label>
+                    <input type="search" id="portal-search" placeholder="Search for Portal Apps...">
+                    <button type="submit" aria-label="Search">
+                        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6.5" fill="none" stroke="#fff" stroke-width="2.5"/><path d="M15 15l6 6" stroke="#fff" stroke-width="2.5"/></svg>
+                    </button>
+                </form>
+                <a class="help-btn" href="#">eWeber Help</a>
+            </div>
+
+            <div class="heading-row">
+                <h1 id="results-heading" tabindex="-1">Featured</h1>
+                <a class="tasks" href="#"><span class="app-icon-sm" aria-hidden="true"></span>New tasks</a>
+            </div>
+            <p id="status" class="sr-only" role="status"></p>
+
+            <ul class="cards" id="cards"></ul>
+        </main>
+    </div>
+
+    <script src="js/portal.js"></script>
+</body>
+</html>

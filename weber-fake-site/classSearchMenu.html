@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Classes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portal.css">
+</head>
+<body class="banner-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="banner">
+        <a href="eWeber.html" aria-label="eWeber portal home"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path fill="#fff" d="M1 1h6v6H1zM11 1h6v6h-6zM1 11h6v6H1zM11 11h6v6h-6z"/></svg></a>
+        <a class="brand" href="home.html"><svg width="26" height="32" viewBox="0 0 26 32" aria-hidden="true" focusable="false"><path d="M2 2h22v14c0 7-5 12-11 14C7 28 2 23 2 16z" fill="none" stroke="#fff" stroke-width="2"/><path d="M7 9l3 11 3-8 3 8 3-11" fill="none" stroke="#fff" stroke-width="2"/></svg> <span><strong>WEBER STATE</strong> UNIVERSITY</span></a>
+        <span class="spacer"></span>
+        <a href="#" aria-label="Settings"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="7" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="3 2.2"/><circle cx="12" cy="12" r="5" fill="none" stroke="#fff" stroke-width="3"/></svg></a>
+        <span class="user"><span class="avatar" aria-hidden="true"></span><span class="user-name">Name, Student</span></span>
+    </header>
+
+    <div class="page-head">
+        <nav aria-label="Breadcrumb">
+            <ul class="crumbs">
+                <li><a href="eWeber.html">Student</a></li>
+                <li><a href="registrationSubMenu.html">Registration</a></li>
+                <li><a href="#">Select a Term</a></li>
+                <li><span aria-current="page">Register for Classes</span></li>
+            </ul>
+        </nav>
+        <h1>Register for Classes</h1>
+    </div>
+
+    <main id="main" class="portal-main">
+        <div class="tabs" role="tablist" aria-label="Registration sections">
+            <button type="button" role="tab" id="tab-find" aria-selected="true" aria-controls="panel-find">Find Classes</button>
+            <button type="button" role="tab" id="tab-crn" aria-selected="false" aria-controls="panel-crn" tabindex="-1">Enter CRNs</button>
+            <button type="button" role="tab" id="tab-plans" aria-selected="false" aria-controls="panel-plans" tabindex="-1">Plans</button>
+            <button type="button" role="tab" id="tab-options" aria-selected="false" aria-controls="panel-options" tabindex="-1">Schedule and Options</button>
+        </div>
+
+        <section class="search-panel" role="tabpanel" id="panel-find" aria-labelledby="tab-find">
+            <h2>Enter Your Search Criteria</h2>
+            <p><strong>Term: Fall 2026</strong></p>
+            <form id="class-form">
+                <div class="row"><label for="subject">Subject</label><input type="text" id="subject"></div>
+                <div class="row"><label for="course-number">Course Number</label><input type="text" id="course-number"></div>
+                <div class="row"><label for="keyword">Keyword</label><input type="text" id="keyword"></div>
+                <div class="row"><label for="campus">Campus</label><input type="text" id="campus"></div>
+                <div class="row"><label for="buildings">Buildings</label><input type="text" id="buildings"></div>
+                <div class="row"><label for="open-only">Open Sections Only</label><input type="checkbox" id="open-only"></div>
+                <div class="form-actions">
+                    <button type="submit" class="pill">Search</button>
+                    <button type="reset" class="link-btn">Clear</button>
+                    <button type="button" class="link-btn" id="adv-toggle" aria-expanded="false" aria-controls="adv">&#9656; Advanced Search</button>
+                </div>
+                <p class="adv" id="adv" hidden>No content provided.</p>
+                <p class="adv" id="search-status" role="status"></p>
+            </form>
+        </section>
+        <section class="search-panel" role="tabpanel" id="panel-crn" aria-labelledby="tab-crn" hidden><p>No content provided.</p></section>
+        <section class="search-panel" role="tabpanel" id="panel-plans" aria-labelledby="tab-plans" hidden><p>No content provided.</p></section>
+        <section class="search-panel" role="tabpanel" id="panel-options" aria-labelledby="tab-options" hidden><p>No content provided.</p></section>
+
+        <div class="lower">
+            <section aria-labelledby="sched-h">
+                <h2 id="sched-h">Class Schedule for Fall 2026</h2>
+                <div class="cal-scroll" role="region" aria-label="Weekly calendar" tabindex="0">
+                    <table class="cal">
+                        <thead><tr><th scope="col"><span class="sr-only">Time</span></th><th scope="col">Sunday</th><th scope="col">Monday</th><th scope="col">Tuesday</th><th scope="col">Wednesday</th><th scope="col">Thursday</th><th scope="col">Friday</th><th scope="col">Saturday</th></tr></thead>
+                        <tbody id="cal-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section aria-labelledby="sum-h">
+                <div class="summary-head"><h2 id="sum-h">Summary</h2><a href="#">Tuition and Fees</a></div>
+                <div class="table-scroll" role="region" aria-label="Summary table" tabindex="0">
+                    <table>
+                        <thead><tr><th scope="col">Title</th><th scope="col">Details</th><th scope="col">Hours</th><th scope="col">CRN</th><th scope="col">Schedule Type</th><th scope="col">Status</th><th scope="col">Action</th></tr></thead>
+                        <tbody><tr><td colspan="7" class="empty">No content provided.</td></tr></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <div class="action-bar"><button type="button" disabled>Submit</button></div>
+    </main>
+
+    <script src="js/classSearch.js"></script>
+</body>
+</html>
