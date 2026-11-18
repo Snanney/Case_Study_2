@@ -1,8 +1,0 @@
-[build]
-    publish = "weber-fake-site"
-
-[[redirects]]
-from = "/"
-to = "/login.html"
-status = 200
-force = true
